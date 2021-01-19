@@ -5,3 +5,5 @@
 **/package-lock.json
 **/.eslintrc.js
 **/tsconfig.json
+**/src/reportWebVitals.ts
+**/src/index.tsx

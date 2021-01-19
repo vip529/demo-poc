@@ -1,20 +1,13 @@
-// import { SeverityLevel } from '@microsoft/applicationinsights-web';
-// import { ErrorInfo } from 'react';
-// import { appInsights } from './appinsight.config';
+import logger from './logger';
 
-// import { ErrorBoundaryProps } from 'react-error-boundary';
+type ErrorHandler = (error: Error, info: { componentStack: string }) => void;
 
-export interface ErrorHandler {
-  error: Error,
-  info: { componentStack: string };
-}
+// Handler function to handle error caught by Error-Boundary. Here , we can send errors to logging service
 
-const myErrorHandler = ({ error, info }) => {
-  // appInsights.trackTrace({
-  //   error: new Error(error),
-  //   severityLevel: SeverityLevel.Error,
-  // });
-  console.log(error, info);
+const myErrorHandler: ErrorHandler = (error, info) => {
+  console.log('gotcha');
+  console.log(error, info.componentStack);
+  logger.logError(error);
 };
 
 export default myErrorHandler;

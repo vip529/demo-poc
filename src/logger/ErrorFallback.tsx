@@ -2,14 +2,15 @@ import { FallbackProps } from 'react-error-boundary';
 
 export type IErrorFallbackProps = FallbackProps;
 
-const ErrorFallback: React.FC<IErrorFallbackProps> = ({ error, componentStack }: IErrorFallbackProps) => {
-    return (
-        <div>
-            <p>Something went wrong:</p>
-            <pre>{error?.message}</pre>
-            <pre>{componentStack}</pre>
-        </div>
-    );
+// Fallback component. To be rendered when Error-Boundary catch error in descendant components
+
+const ErrorFallback: React.FC<IErrorFallbackProps> = ({ error }: IErrorFallbackProps) => {
+  return (
+    <div>
+      <p>Something went wrong:</p>
+      <pre>{error?.message}</pre>
+    </div>
+  );
 };
 
 export default ErrorFallback;
