@@ -1,6 +1,6 @@
 import { useTrackMetric } from '@microsoft/applicationinsights-react-js';
 import { SeverityLevel } from '@microsoft/applicationinsights-web';
-import { appInsights, reactPlugin } from './appinsight.config';
+import { appInsights, reactPlugin } from './TelemetryConfig';
 
 // Utility function to  return a numerical equivalent of LogLevels
 

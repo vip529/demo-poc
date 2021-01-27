@@ -1,4 +1,4 @@
-import logger from './logger';
+// import logger from './LogHandler';
 
 type ErrorHandler = (error: Error, info: { componentStack: string }) => void;
 
@@ -7,7 +7,7 @@ type ErrorHandler = (error: Error, info: { componentStack: string }) => void;
 const myErrorHandler: ErrorHandler = (error, info) => {
   console.log('gotcha');
   console.log(error, info.componentStack);
-  logger.logError(error);
+  // logger.logError(error);
 };
 
 export default myErrorHandler;

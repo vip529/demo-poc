@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useErrorHandler } from 'react-error-boundary';
-import logger from '../logger/logger';
+import logger from '../logger/LogHandler';
 
 export interface MyData {
   Image: string;
@@ -31,8 +31,8 @@ const MyDashboard: React.FC = () => {
     <div>
       <div>MyDashboard</div>
       {data &&
-        data.map(value => {
-          return <div>{value.name}</div>;
+        data.map((value, index) => {
+          return <div key={`${value} ${index + 1}`}>{value.name}</div>;
         })}
     </div>
   );

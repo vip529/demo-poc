@@ -1,9 +1,10 @@
 /* eslint-disable prettier/prettier */
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './assets/css/index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import './frameworks/internationalization/index';
 
 ReactDOM.render(
   <React.StrictMode>
